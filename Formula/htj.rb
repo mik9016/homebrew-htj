@@ -8,8 +8,7 @@ class Htj < Formula
   depends_on "dotnet"
 
   def install
-    system "dotnet", "publish", "-c", "Release", "-o", "#{prefix}"
-    bin.install "#{prefix}/htj"
+    bin.install "htj"
   end
 
   test do

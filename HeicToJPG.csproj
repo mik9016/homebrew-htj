@@ -11,4 +11,12 @@
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.9.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Formula\" />
+    <None Remove="dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formula\" />
+    <Folder Include="dist\" />
+  </ItemGroup>
 </Project>
