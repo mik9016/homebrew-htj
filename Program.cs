@@ -1,14 +1,10 @@
-﻿using System;
-using System.CommandLine;
-using System.CommandLine.Invocation;
-using System.IO;
+﻿using System.CommandLine;
 using ImageMagick;
 
 class Program
 {
     static async Task<int> Main(string[] args)
     {
-        // Define the options
         var inputOption = new Option<string>(
             "--input",
             "The input folder path containing HEIC files.")
@@ -25,7 +21,6 @@ class Program
        
 
 
-        // Create the root command
         var rootCommand = new RootCommand
         {
             inputOption,
@@ -34,7 +29,6 @@ class Program
 
         rootCommand.Description = "HEIC to JPG Converter";
 
-        // Set the handler for the command
         rootCommand.SetHandler((string input, string output) =>
         {
             if (string.IsNullOrEmpty(input))
@@ -62,7 +56,6 @@ class Program
             Console.WriteLine("Conversion process completed.");
         }, inputOption, outputOption);
 
-        // Invoke the root command
         return await rootCommand.InvokeAsync(args);
     }
 
