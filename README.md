@@ -2,7 +2,7 @@
 
 ## Description
 
-HEIC to JPG Converter is a command-line tool built with .NET 7 that converts HEIC images to JPG format. The tool processes all HEIC files in a specified input folder and saves the converted JPG files to an output folder. If no output folder is specified, the converted images are saved to a "ConvertedImages" folder on the desktop.
+HEIC to JPG Converter is a command-line tool built with .NET 10 that converts HEIC images to JPG format. The tool processes all HEIC files in a specified input folder and saves the converted JPG files to an output folder. If no output folder is specified, the converted images are saved to a "ConvertedImages" folder on the desktop.
 
 ## Features
 
@@ -13,7 +13,7 @@ HEIC to JPG Converter is a command-line tool built with .NET 7 that converts HEI
 
 ## Prerequisites
 
-- [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [ImageMagick](https://imagemagick.org/) and the [Magick.NET](https://github.com/dlemstra/Magick.NET) library.
 
 ## Installation
@@ -25,6 +25,32 @@ HEIC to JPG Converter is a command-line tool built with .NET 7 that converts HEI
     ```
 
 2. Install the required .NET and ImageMagick libraries.
+
+### Set up the `htj` terminal alias
+
+Run the setup script for your platform. It detects your OS and shell and adds a
+persistent `htj` alias/function to your shell profile.
+
+**macOS / Linux**
+
+```bash
+./scripts/setup.sh       # bash
+zsh ./scripts/setup.sh   # zsh
+source ~/.bashrc         # or ~/.zshrc, depending on your shell
+```
+
+**Windows (PowerShell)**
+
+```powershell
+.\scripts\setup.ps1
+. $PROFILE
+```
+
+After reloading your shell you can run:
+
+```bash
+htj --input /path/to/heic-folder --output /path/to/jpg-folder
+```
 
 ## Usage
 
